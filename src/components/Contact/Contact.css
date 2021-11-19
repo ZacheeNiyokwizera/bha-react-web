@@ -97,19 +97,16 @@
 }
 
 .submit-btn {
-    width: 45rem;
+    width: 25rem;
     height: 5rem;
     background-color: #1E90FF;
     color: #fff;
     border: none;
-    margin-top: 2rem;
-    font-family: "Muli", serif;
     font-size: 2rem;
-    font-weight: 300;
+    font-weight: 200;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     cursor: pointer;
-    text-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.5);
     box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.3);
 }
 
@@ -118,4 +115,121 @@
     color: teal;
     font-size: medium;
     margin-top: 20px;
+}
+
+
+/* Keyframes */
+
+@keyframes hamburger_puls {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.4);
+    }
+}
+
+@keyframes text_reveal_box {
+    50% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+
+@keyframes text_reveal {
+    100% {
+        color: white;
+    }
+}
+
+@keyframes text_reveal_name {
+    100% {
+        color: #1E90FF;
+        font-weight: 500;
+    }
+}
+
+/* End Keyframes */
+
+/* media query for contact and footer  */
+
+@media (max-width: 1500px) {
+    .contact-wrapper {
+        width: 80%;
+        height: 65rem;
+    }
+  
+   
+}
+
+
+
+@media (max-width: 1300px) {
+    .contact-wrapper {
+        width: 90%;
+        height: 55rem;
+    }
+    .contact-heading {
+        margin-bottom: 2rem;
+    }
+    .field {
+        margin: 2rem 0;
+    }
+   
+    .cards-wrapper {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 4rem;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .contact-left {
+        width: 0;
+    }
+    .contact-right {
+        width: 100%;
+    }
+    .field {
+        width: 55rem;
+    }
+    .input-group textarea {
+        max-width: 55rem;
+    }
+    .submit-btn {
+        width: 55rem;
+    }
+ 
+}
+
+@media (max-width: 700px) {
+
+    .field {
+        width: 35rem;
+    }
+    .input-group textarea {
+        max-width: 35rem;
+    }
+    .submit-btn {
+        width: 35rem;
+    }
+  
+  
+}
+
+@media (max-width: 500px) {
+    html {
+        font-size: 45%;
+    }
+    
+    .contact-heading {
+        font-size: 25px;
+    }
 }

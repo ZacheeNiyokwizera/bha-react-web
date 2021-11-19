@@ -162,7 +162,8 @@ nav {
   transform: rotate(90deg);
 }
 .logo {
-  height: 40px;
+  height: 70px;
+  width: 150px;
 }
 .links a {
   color: var(--clr-grey-3);
@@ -234,6 +235,8 @@ nav {
 
 /* From the older project  */
 
+
+
 /* Header section */
 
 .new-header {
@@ -276,11 +279,11 @@ nav {
 
 .banner h1 {
   font-family: "Baloo Da 2", serif;
-  font-size: 7rem;
+  font-size: 5rem;
   font-weight: 300;
   color: #fff;
   width: 50%;
-  line-height: 8rem;
+  line-height: 6rem;
   letter-spacing: 0.2rem;
   text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.4);
   opacity: 0;
@@ -289,7 +292,7 @@ nav {
 
 .banner p {
   font-family: "Josefin Slab", serif;
-  font-size: 4rem;
+  font-size: 3rem;
   color: #fff;
   width: 70%;
   letter-spacing: 0.1rem;
@@ -326,151 +329,191 @@ nav {
   }
 }
 
-#header {
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: auto;
-}
 
-#header .header {
-  min-height: 8vh;
-  background-color: rgba(31, 30, 30, 0.24);
-  transition: .3s ease background-color;
-}
 
-#header .nav-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-  max-width: 1300px;
-  padding: 0 10px;
-}
 
-#header .nav-list ul {
-  list-style: none;
-  position: absolute;
-  background-color: rgb(31, 30, 30);
-  width: 100vw;
-  height: 100vh;
-  left: 100%;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  overflow-x: hidden;
-  transition: .5s ease left;
-}
 
-#header .nav-list ul.active {
-  left: 0%;
-}
 
-#header .nav-list ul li.active a {
-  border-style: groove;
-  border-color: #1E90FF;
-}
 
-#header .nav-list ul a {
-  font-size: 2.5rem;
-  font-weight: 500;
-  letter-spacing: .2rem;
-  text-decoration: none;
-  color: white;
-  text-transform: uppercase;
-  padding: 20px;
-  display: block;
-}
 
-#header .nav-list ul a::after {
-  content: attr(data-after);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  color: rgba(240, 248, 255, 0.021);
-  font-size: 13rem;
-  letter-spacing: 50px;
-  z-index: -1;
-  transition: .3s ease letter-spacing;
-}
 
-#header .nav-list ul li:hover a::after {
-  transform: translate(-50%, -50%) scale(1);
-  letter-spacing: initial;
-}
 
-#header .nav-list ul li:hover a {
-  color: #1E90FF;
-}
 
-#header .hamburger {
-  height: 60px;
-  width: 60px;
-  display: inline-block;
-  border: 3px solid white;
-  border-radius: 50%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-  cursor: pointer;
-  transform: scale(.8);
-  margin-right: 20px;
-}
 
-#header .hamburger:after {
-  position: absolute;
-  content: '';
-  height: 100%;
-  width: 100%;
-  border-radius: 50%;
-  border: 3px solid white;
-  animation: hamburger_puls 1s ease infinite;
-}
 
-#header .hamburger .bar {
-  height: 2px;
-  width: 30px;
-  position: relative;
-  background-color: white;
-  z-index: -1;
-}
-
-#header .hamburger .bar::after,
-#header .hamburger .bar::before {
-  content: '';
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  background-color: white;
-  transition: .3s ease;
-  transition-property: top, bottom;
-}
-
-#header .hamburger .bar::after {
-  top: 8px;
-}
-
-#header .hamburger .bar::before {
-  bottom: 8px;
-}
-
-#header .hamburger.active .bar::before {
-  bottom: 0;
-}
-
-#header .hamburger.active .bar::after {
-  top: 0;
-}
 
 
 /* End Header section */
+
+
+/* Keyframes */
+
+@keyframes hamburger_puls {
+  0% {
+      opacity: 1;
+      transform: scale(1);
+  }
+  100% {
+      opacity: 0;
+      transform: scale(1.4);
+  }
+}
+
+@keyframes text_reveal_box {
+  50% {
+      width: 100%;
+      left: 0;
+  }
+  100% {
+      width: 0;
+      left: 100%;
+  }
+}
+
+@keyframes text_reveal {
+  100% {
+      color: white;
+  }
+}
+
+@keyframes text_reveal_name {
+  100% {
+      color: #1E90FF;
+      font-weight: 500;
+  }
+}
+
+
+/* End Keyframes */
+
+
+/* Media Query For Tablet */
+
+@media only screen and (min-width: 768px) {
+  .cta {
+      font-size: 2.5rem;
+      padding: 20px 60px;
+  }
+  h1.section-title {
+      font-size: 6rem;
+  }
+  /* About */
+  #about .about {
+      flex-direction: row;
+  }
+  #about .col-left {
+      width: 600px;
+      height: 400px;
+      padding-left: 60px;
+  }
+  #about .about .col-left .about-img::after {
+      left: -45px;
+      top: 34px;
+      height: 98%;
+      width: 98%;
+      border: 10px solid #1E90FF;
+  }
+  #about .col-right {
+      text-align: left;
+      padding: 30px;
+  }
+  #about .col-right h1 {
+      text-align: left;
+  }
+  /* Services Section */
+  #services .service-bottom .service-item {
+      flex-basis: 45%;
+      margin: 2.5%;
+  }
+  /* End Services Section */
+  .footer {
+      height: 25rem;
+  }
+  /* End About */
+}
+
+
+/* End Media Query For Tablet */
+
+
+/* Media Query For Desktop */
+
+@media only screen and (min-width: 1200px) {
+  /* header */
+  #header .hamburger {
+      display: none;
+  }
+  #header .nav-list ul {
+      position: initial;
+      display: block;
+      height: auto;
+      width: fit-content;
+      background-color: transparent;
+  }
+  #header .nav-list ul li {
+      display: inline-block;
+  }
+  #header .nav-list ul li a {
+      font-size: 1.8rem;
+  }
+  #header .nav-list ul a:after {
+      display: none;
+  }
+  #services .service-bottom .service-item {
+      flex-basis: 22%;
+      margin: 1.5%;
+  }
+  .footer {
+      height: 28rem;
+      margin-bottom: -15px;
+  }
+  /* End header */
+}
+
+
+
+/* media query for contact and footer  */
+
+
+@media (max-width: 1400px) {
+  .banner h1 {
+      font-size: 6rem;
+      line-height: 7rem;
+  }
+  .banner p {
+      font-size: 3rem;
+  }
+  .banner a {
+      width: 20rem;
+      height: 5rem;
+      font-size: 1.6rem;
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .banner h1 {
+      font-size: 5rem;
+      line-height: 6rem;
+  }
+  .banner p {
+      font-size: 2.5rem;
+  }
+  .banner a {
+      width: 18rem;
+      height: 4rem;
+      font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .banner h1 {
+      font-size: 4rem;
+      line-height: 5rem;
+  }
+  .banner p {
+      font-size: 2rem;
+  }
+ 
+}
+

@@ -1,15 +1,15 @@
 import React from "react";
 import "./About.css";
-// import aboutPic from "./images/aboutPic.jpg";
+import aboutPic from "./home-bg.jpg";
 
 function about() {
   return (
-    <div>
+  
       <div id="about">
         <div class="about container">
           <div class="col-left">
             <div class="about-img">
-              {/* <img src={aboutPic} alt="img" /> */}
+              <img src={aboutPic} alt="img" />
             </div>
           </div>
           <div class="col-right">
@@ -38,7 +38,7 @@ function about() {
           </div>
         </div>
       </div>
-    </div>
+  
   );
 }
 
